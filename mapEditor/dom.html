@@ -1,0 +1,61 @@
+<head>
+  <style>
+    .column {
+      float: left;
+    }
+    .left {
+      width: 50%;
+    }
+    .right {
+      width: 50%;
+    }
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .canvasColumn {
+      max-width: 400px;
+    }
+    .inputColumn {
+      width: 35%;
+    }
+  </style>
+</head>
+<body>
+  <div app-obj="root">
+    <div class="row">
+      <div class="column canvasColumn">
+        <canvas 
+          app-obj="canvas"
+          width="400"
+          height="400"
+          tabindex="1"
+          style="background-color: blue;"
+        ></canvas>
+      </div>
+      <div class="column inputColumn">
+        <select app-obj="object"></select>
+        <select app-obj="tool"></select>
+        <input app-obj="gridSize" type="number" placeholder="grid size">
+        <input app-obj="zoom" type="number" placeholder="zoom">
+        <div class ="row">
+          <input app-obj="viewPosX" type="number" placeholder="X" class="column" style="width:83px;">
+          <input app-obj="viewPosY" type="number" placeholder="Y" class="column" style="width:82px;">
+        </div>
+        <input app-obj="cameraSpeed" type="number" placeholder="camera speed">
+        <button app-obj="export">Export</button>
+        <button app-obj="import">Import</button>
+        <br>
+        <textarea app-obj="exporttext"></textarea>
+      </div>
+      <br>
+    </div>
+    <div class="row">
+      <div app-obj="tryout-app" class="column canvasColumn"></div>
+      <div class="column inputColumn">
+        <button app-obj="tryout">Try Out</button>
+      </div>
+    </div>
+  </div>
+</body>
